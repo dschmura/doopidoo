@@ -1,0 +1,2 @@
+- name: docsify-action
+  uses: tool3/docsify-action@v1.0.3

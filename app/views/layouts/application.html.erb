@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= "#{ t :app_name}"%> </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= render 'application/favicon' %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <%= hotwire_livereload_tags if Rails.env.development? %>
+
+    <% if content_for? :head %>
+      <%= yield :head %>
+    <% end %>
+
+    <base href="<%= root_url %>" />
+  </head>
+
+  <body <%= "data-environment=#{Rails.env}" %>  >
+    <%= skip_links %>
+    <%= render "layouts/header" %>
+    <main class=" mx-auto py-14 px-7 xl:container <%= "#{controller.controller_name}" %>", id="main">
+      <%=  render 'layouts/utilities/tailwindcss_breakpoints' unless Rails.env.production?%>
+      <%= render 'layouts/flash_notifications' %>
+      <%= yield %>
+    </main>
+  </body>
+</html>

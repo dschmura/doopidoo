@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .branding {
+    @apply text-umich-maize group-hover:opacity-90 flex w-auto;
+  }
+  .branding-logo {
+    @apply group-hover:opacity-90 flex w-auto sm:pr-4;
+  }
+
+  .branding-wordmark {
+    @apply text-umich-maize group-hover:opacity-90 sr-only sm:not-sr-only sm:visible text-3xl font-semibold tracking-tight w-auto whitespace-nowrap;
+  }
+
+  .branding-primary {
+    @apply text-umich-blue;
+  }
+
+  header {
+    @apply w-screen min-w-max;
+  }
+
+  .header-link {
+    @apply text-sky-50 hover:bg-opacity-60 hover:bg-sky-700 hover:text-umich-maize px-2 py-2 rounded-md text-lg font-medium;
+  }
+
+  .header-link-mobile {
+    @apply text-gray-300 hover:bg-opacity-60 hover:bg-sky-700 hover:text-umich-maize block px-3 py-2 rounded-md text-base font-medium text-center text-2xl ;
+  }
+
+  .header-link.active{
+    @apply bg-sky-700 text-umich-maize;
+  }
+
+  .active{
+    @apply underline;
+  }
+
+  .omni-auth-button {
+    @apply inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-500 shadow-sm hover:bg-gray-50;
+  }
+  .skip-to-content-link {
+    @apply sr-only font-bold text-2xl text-white not-sr-only focus-within:bg-green-700 relative self-center flex justify-center focus-within:p-5 focus-within:underline focus-within:mt-16;
+  }
+
+  #error_explanation {
+    @apply border border-red-800 bg-red-50 p-4 rounded-lg mb-6;
+  }
+
+  #error_explanation h2 {
+    @apply pb-1 font-bold text-lg text-sky-700;
+  }
+
+  #error_explanation ul {
+    @apply list-disc list-inside space-y-1 pb-6 text-red-700;
+  }
+
+  .invalid-field {
+    @apply bg-red-100 sm:text-sm;
+  }
+
+  .invalid-field-message {
+    @apply text-red-800  italic text-sm pl-2;
+  }
+}
+
+@layer utilities {
+  .corner-ribbon {
+    @apply bg-red-700 text-red-50 pt-2 h-10 w-72 rotate-45 text-center absolute right-0 -mr-20 z-50 shadow-2xl;
+  }
+
+  /* Different positions */
+  .corner-ribbon.top-left {
+    @apply -rotate-45 left-0 -ml-20 top-0 mt-10;
+  }
+
+  .corner-ribbon.top-right {
+    @apply rotate-45 right-0 -ml-20 top-0 mt-10;
+  }
+
+  .corner-ribbon.bottom-left {
+    @apply rotate-45 left-0 -ml-20 bottom-0 mb-10;
+  }
+
+  .corner-ribbon.bottom-right {
+    @apply -rotate-45 right-0 -ml-20 bottom-0 mb-10;
+  }
+
+  /* missing_alt_tags */
+  body[data-environment="development"] img[alt=""],
+  body[data-environment="development"] img:not([alt]) {
+    @apply border-4 border-red-700 border-dotted p-2;
+  }
+}
